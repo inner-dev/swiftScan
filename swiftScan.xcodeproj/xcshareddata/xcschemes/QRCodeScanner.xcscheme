@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0830"
+   LastUpgradeVersion = "0940"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D6DC96F31F6D0C0200E1CCEB"
-               BuildableName = "SwiftScanner.framework"
-               BlueprintName = "SwiftScanner"
+               BlueprintIdentifier = "0AD959B8213789E600907F8A"
+               BuildableName = "QRCodeScanner.framework"
+               BlueprintName = "QRCodeScanner"
                ReferencedContainer = "container:swiftScan.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D6DC96F31F6D0C0200E1CCEB"
-            BuildableName = "SwiftScanner.framework"
-            BlueprintName = "SwiftScanner"
+            BlueprintIdentifier = "0AD959B8213789E600907F8A"
+            BuildableName = "QRCodeScanner.framework"
+            BlueprintName = "QRCodeScanner"
             ReferencedContainer = "container:swiftScan.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D6DC96F31F6D0C0200E1CCEB"
-            BuildableName = "SwiftScanner.framework"
-            BlueprintName = "SwiftScanner"
+            BlueprintIdentifier = "0AD959B8213789E600907F8A"
+            BuildableName = "QRCodeScanner.framework"
+            BlueprintName = "QRCodeScanner"
             ReferencedContainer = "container:swiftScan.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
