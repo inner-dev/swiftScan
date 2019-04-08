@@ -155,7 +155,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
 
             let picker = UIImagePickerController()
 
-            picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            picker.sourceType = UIImagePickerController.SourceType.photoLibrary
 
             picker.delegate = self
 
@@ -169,10 +169,10 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         picker.dismiss(animated: true, completion: nil)
 
-        var image: UIImage? = info[UIImagePickerControllerEditedImage] as? UIImage
+        var image:UIImage? = info[UIImagePickerController.InfoKey.editedImage.rawValue] as? UIImage
 
-        if (image == nil ) {
-            image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        if (image == nil) {
+             image = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage
         }
 
         if(image != nil) {
@@ -188,8 +188,8 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
 
     func showMsg(title: String?, message: String?) {
 
-        let alertController = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let alertAction = UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: UIAlertActionStyle.default) { (_) in
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: UIAlertController.Style.alert)
+        let alertAction = UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: UIAlertAction.Style.default) { (_) in
 
             //                if let strongSelf = self
             //                {
@@ -205,11 +205,11 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     }
 
     private func requireUserConfirmation(when confirmed: @escaping () -> Void) {
-        let alertController = UIAlertController(title: "去开启相机权限", message: nil, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "好的", style: UIAlertActionStyle.default, handler: { (_) in
+        let alertController = UIAlertController(title: "去开启相机权限", message: nil, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "好的", style: UIAlertAction.Style.default, handler: { (_) in
             confirmed()
         }))
-        alertController.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "取消", style: UIAlertAction.Style.default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
 
