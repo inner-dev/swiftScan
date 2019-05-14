@@ -309,7 +309,7 @@ class MainTableViewController: UITableViewController, UIImagePickerControllerDel
     func openLocalPhotoAlbum() {
         let picker = UIImagePickerController()
 
-        picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        picker.sourceType = UIImagePickerController.SourceType.photoLibrary
 
         picker.delegate = self
 
@@ -322,10 +322,10 @@ class MainTableViewController: UITableViewController, UIImagePickerControllerDel
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
         picker.dismiss(animated: true, completion: nil)
 
-        var image: UIImage? = info[UIImagePickerControllerEditedImage] as? UIImage
+        var image: UIImage? = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage
 
         if (image == nil ) {
-            image = info[UIImagePickerControllerOriginalImage] as? UIImage
+            image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage
         }
 
         if(image == nil) {
@@ -346,9 +346,9 @@ class MainTableViewController: UITableViewController, UIImagePickerControllerDel
     }
 
     func showMsg(title: String?, message: String?) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
 
-        let alertAction = UIAlertAction(title: "知道了", style: UIAlertActionStyle.default) { (_) -> Void in
+        let alertAction = UIAlertAction(title: "知道了", style: UIAlertAction.Style.default) { (_) -> Void in
 
         }
 
@@ -362,4 +362,9 @@ class MainTableViewController: UITableViewController, UIImagePickerControllerDel
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
 }
